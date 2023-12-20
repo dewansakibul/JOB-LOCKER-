@@ -1,0 +1,28 @@
+{
+    "name": "highestRemainingDone",
+    "description": "Job Locker will automatically accept your jobs from your include list jobs & it will also protect you from being banned.",
+    "version": "20.00",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+      },
+    "permissions": ["activeTab", "scripting", "tabs", "history", "browsingData", "storage", "webNavigation"],
+    "content_scripts": [
+        {
+          "js": ["content.js"],
+          "matches": ["https://*.microworkers.com/*"]
+        }
+      ],
+    "action": {
+      "default_title": "JOB LOCKER",
+      "default_icon": {
+        "128": "128.png"
+      },
+      "default_popup": "popup.html"
+    },
+    "icons": {
+      "128": "128.png"
+    }
+  }
+  
